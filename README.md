@@ -77,6 +77,17 @@ Open config.h.
 
 Configure your Navidrome server address and API credentials.
 
+3.1 Initial Configuration (Code Level)
+Before flashing, you must set your default server endpoints in the source code:
+----------------------------------------------------------------------------------------------------------
+OTA Configuration: Locate lines 96-97 in config.h:
+  #define OTA_DEFAULT_VER_URL  "http://your-server/version.txt"
+  #define OTA_DEFAULT_FW_URL   "http://your-server/firmware.bin"
+
+Navidrome Default: Locate line 41 in navidrome.h:  
+   #define ND_DEFAULT_SERVER "https://your-navidrome-url"
+----------------------------------------------------------------------------------------------------------
+
 4. Operation Guide
 Rotate Encoder: Adjust volume (Home screen) or navigate menus.
 
@@ -94,6 +105,22 @@ Network: Scan and manage WiFi saved slots.
 Navidrome: Configure server URL and User Token.
 
 OTA: Upload new .bin firmware files wirelessly.
+
+5.1 Backend Server Requirements
+Navidrome Setup
+Create a standard user account in your Navidrome instance.
+
+You do not need to hardcode the password. Open the IMP-PLAYER Web Portal (after connecting to the device's WiFi) to enter the Username and Password. The device will automatically generate the MD5 Token for secure API communication.
+
+OTA File Server
+To use the OTA update feature, you need a simple HTTP file server (like Nginx, Apache, or a simple Python file server) hosting two files:
+
+firmware.bin: The compiled binary of the project.
+
+version.txt: A plain text file containing only the version number (e.g., 1.0.2).
+The device compares the string in version.txt with its internal version to trigger an update.
+
+
 6. Disclaimer & Contribution
 ⚠️ Disclaimer
 This project is an experimental implementation of high-concurrency tasks on low-resource hardware. While it includes several memory-safety hacks (like the 127.0.0.1 handshake), unexpected reboots may occur under extreme network jitter or with overly large SD card directories (recommended < 500 tracks).
