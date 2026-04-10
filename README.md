@@ -1,4 +1,4 @@
-IMP-PLAYER: The Extreme ESP32-WROOM Network Audio Terminal
+IMP-PLAYER: The ESP32-WROOM Network Audio Terminal
 1. Project Overview
 IMP-PLAYER is a high-performance audio terminal based on the ESP32-WROOM-32 (No-PSRAM version). It is designed to push the hardware's physical limits, integrating network streaming, local playback, and complex UI interactions within a highly constrained memory environment.
 
@@ -15,7 +15,7 @@ System Utilities: NTP network clock, battery monitoring, and a built-in PONG gam
 
 Maintenance: Web-based WiFi configuration portal and OTA (Over-the-Air) firmware updates.
 
-🛠️ Technical Highlights (The "Hardcore" Part)
+
 This project is specifically optimized for the Non-PSRAM ESP32-WROOM chip:
 
 Dynamic Memory Orchestration: Implements a "模式切换即清场" (Clear-on-Switch) strategy. Metadata and buffers are dynamically allocated and freed to ensure 40KB+ contiguous heap for HTTPS handshakes.
