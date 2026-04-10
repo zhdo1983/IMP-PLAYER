@@ -61,9 +61,8 @@ GPIO34	  BAT_ADC	    Battery Voltage Detection
 
 3. Installation & Compilation
 Prerequisites
-Framework: Arduino IDE 2.x or PlatformIO.
+Framework:  PlatformIO.
 
-Core: ESP32 Arduino Core (v2.0.x recommended).
 
 Required Libraries
 Please install the following libraries via the Library Manager:
