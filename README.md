@@ -28,7 +28,6 @@ Dynamic Memory Orchestration: Implements a "模式切换即清场" (Clear-on-Swi
 Anti-Fragmentation Hack: Uses a "Silent Handshake" technique (connecting to 127.0.0.1) to force the network stack to flush buffers and defragment the heap before critical operations.
 
 Multitasking: Decoupled FreeRTOS tasks for OLED rendering, audio decoding, and system monitoring.
-![mmexport1775838527708](https://github.com/user-attachments/assets/6b438693-66ef-4ff8-8dfa-9a03bb403db8)
 2. Hardware
 Component   Specification
 MCU     	 ESP32-WROOM-32 (4MB Flash, No PSRAM)
