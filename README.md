@@ -117,12 +117,11 @@ Before flashing, you must set your default server endpoints in the source code:
 OTA Configuration: Locate lines 96-97 in config.h:
   #define OTA_DEFAULT_VER_URL  "http://your-server/version.txt"
   #define OTA_DEFAULT_FW_URL   "http://your-server/firmware.bin"
-
-Navidrome Default: Locate line 41 in navidrome.h:  
+  Navidrome Default: Locate line 41 in navidrome.h:  
    #define ND_DEFAULT_SERVER "https://your-navidrome-url"
+
+
 ----------------------------------------------------------------------------------------------------------
-
-
 
 5. Web Interface
 The device hosts a local web server for advanced configuration:
