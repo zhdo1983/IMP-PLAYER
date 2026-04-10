@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-MAX98357 网络收音机用户使用手册</title>
+    <link rel="stylesheet" href="user_manual.css">
+</head>
+<body>
+    <header>
+        <h1>ESP32-MAX98357 网络收音机用户使用手册</h1>
+        <p>感谢您选择我们的产品，本手册将指导您如何使用这款多功能设备。</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#welcome">一、欢迎使用</a></li>
+            <li><a href="#package">二、包装清单</a></li>
+            <li><a href="#structure">三、产品结构与按键说明</a></li>
+            <li><a href="#first-use">四、首次使用</a></li>
+            <li><a href="#features">五、功能操作指南</a></li>
+            <li><a href="#web-interface">六、Web管理界面（高级功能）</a></li>
+            <li><a href="#faq">七、常见问题解答</a></li>
+            <li><a href="#safety">八、安全注意事项</a></li>
+            <li><a href="#contact">九、联系我们</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="welcome">
+            <h2>一、欢迎使用</h2>
+            <p>感谢您选择我们的ESP32网络收音机！这是一款集网络电台、本地MP3播放、时钟显示、娱乐游戏于一体的多功能设备。它操作简单，音质出色，能为您的生活带来更多乐趣。</p>
+            <h3>主要功能概览：</h3>
+            <ul>
+                <li><strong>海量网络电台：</strong> 轻松收听全球广播，支持MP3/AAC格式。</li>
+                <li><strong>SD卡音乐播放：</strong> 插入TF卡即可播放您喜爱的MP3音乐。</li>
+                <li><strong>清晰OLED显示：</strong> 128x64像素屏幕，中文菜单，信息一目了然。</li>
+                <li><strong>旋转编码器：</strong> 方便快捷地调节音量、选择菜单。</li>
+                <li><strong>智能WiFi配置：</strong> 首次使用或更换网络时，通过手机即可轻松设置。</li>
+                <li><strong>在线固件升级：</strong> 随时获取最新功能和性能优化。</li>
+                <li><strong>电池电量显示：</strong> 实时了解设备电量，方便充电。</li>
+                <li><strong>NTP网络时钟：</strong> 自动同步准确时间。</li>
+                <li><strong>趣味PONG游戏：</strong> 享受休闲时光。</li>
+            </ul>
+        </section>
+
+        <section id="package">
+            <h2>二、包装清单</h2>
+            <p>请检查您收到的产品是否包含以下物品：</p>
+            <ul>
+                <li>ESP32网络收音机主机 x1</li>
+                <li>（可能包含）USB充电线 x1</li>
+                <li>（可能包含）TF卡 x1</li>
+                <li>（可能包含）扬声器 x1</li>
+            </ul>
+        </section>
+
+        <section id="structure">
+            <h2>三、产品结构与按键说明</h2>
+            <p>（此处可根据实际产品设计，加入图片或文字描述主要部件和按键功能）</p>
+            <ul>
+                <li><strong>OLED显示屏：</strong> 显示时间、电台信息、菜单等。</li>
+                <li><strong>旋转编码器：</strong>
+                    <ul>
+                        <li><strong>旋转：</strong> 调节音量、滚动菜单选项。</li>
+                        <li><strong>按下：</strong> 播放/暂停、确认选择、进入菜单。</li>
+                    </ul>
+                </li>
+                <li><strong>USB接口：</strong> 用于供电和固件升级。</li>
+                <li><strong>TF卡槽：</strong> 插入TF卡播放本地音乐。</li>
+                <li><strong>扬声器：</strong> 音频输出。</li>
+            </ul>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 产品整体结构图</p>
+                <img src="placeholder_structure.png" alt="产品整体结构图" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备实物或渲染图，标示出主要部件。</em></p>
+            </div>
+        </section>
+
+        <section id="first-use">
+            <h2>四、首次使用</h2>
+
+            <h3>4.1 连接电源与开机</h3>
+            <p>1. 将USB充电线连接到设备的USB接口，另一端连接到5V USB电源适配器（例如手机充电器）或电脑USB端口。</p>
+            <p>2. 设备将自动开机，并显示启动动画。</p>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 设备开机动画</p>
+                <img src="placeholder_boot.png" alt="设备开机动画" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备开机时OLED屏幕的启动动画截图。</em></p>
+            </div>
+
+            <h3>4.2 WiFi配置（首次使用或更换网络）</h3>
+            <p>首次开机或设备无法连接到已保存的WiFi时，它会自动进入配网模式。此时OLED屏幕会显示相关提示。</p>
+            <ol>
+                <li><strong>连接设备热点：</strong>
+                    <p>用您的手机或电脑搜索WiFi热点，找到名为 <code>ESP32_Radio</code> 的网络并连接（无需密码）。</p>
+                    <div class="image-placeholder">
+                        <p><strong>[图片占位符]</strong> 手机连接ESP32_Radio热点界面</p>
+                        <img src="placeholder_wifi_hotspot.png" alt="手机连接ESP32_Radio热点界面" style="max-width:100%; height:auto;">
+                        <p><em>请在此处替换为手机连接名为“ESP32_Radio”WiFi热点的界面截图。</em></p>
+                    </div>
+                </li>
+                <li><strong>打开配置页面：</strong>
+                    <p>连接成功后，打开手机或电脑的浏览器，访问地址：<code>http://192.168.3.3</code>。</p>
+                    <p>您将看到一个简单的配置页面。</p>
+                    <div class="image-placeholder">
+                        <p><strong>[图片占位符]</strong> WiFi配置页面</p>
+                        <img src="placeholder_wifi_config_page.png" alt="WiFi配置页面" style="max-width:100%; height:auto;">
+                        <p><em>请在此处替换为浏览器中访问192.168.3.3时显示的WiFi配置页面截图。</em></p>
+                    </div>
+                </li>
+                <li><strong>输入WiFi信息：</strong>
+                    <p>在页面上输入您家或办公室的WiFi名称（SSID）和密码。</p>
+                    <p>您可以添加最多5个常用的WiFi网络。</p>
+                </li>
+                <li><strong>保存并重启：</strong>
+                    <p>点击页面底部的“保存并重启”按钮。</p>
+                    <p>设备会自动重启并尝试连接您配置的WiFi网络。连接成功后，它会尝试播放默认电台。</p>
+                </li>
+            </ol>
+
+            <h3>4.3 TF卡准备与插入（如需播放本地音乐）</h3>
+            <ol>
+                <li>将TF卡（建议使用Class 10或更高速度，最大支持32GB）插入电脑。</li>
+                <li><strong>格式化：</strong> 如果TF卡不是FAT32格式，请将其格式化为FAT32。</li>
+                <li><strong>复制音乐：</strong> 将您喜欢的MP3音乐文件复制到TF卡中（支持子文件夹）。</li>
+                <li><strong>插入设备：</strong> 将准备好的TF卡轻轻插入设备的TF卡槽中。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> TF卡插入示意图</p>
+                <img src="placeholder_tf_insert.png" alt="TF卡插入示意图" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为TF卡插入设备卡槽的示意图或照片。</em></p>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>五、功能操作指南</h2>
+
+            <h3>5.1 音量调节</h3>
+            <ul>
+                <li>在任何播放界面，旋转编码器即可调节音量大小。</li>
+                <li>顺时针旋转：增大音量。</li>
+                <li>逆时针旋转：减小音量。</li>
+            </ul>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 音量调节界面</p>
+                <img src="placeholder_volume.png" alt="音量调节界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示音量调节的截图。</em></p>
+            </div>
+
+            <h3>5.2 主菜单</h3>
+            <ul>
+                <li>在播放界面，<strong>短按</strong>旋转编码器按钮，即可进入主菜单。</li>
+                <li>在主菜单中，通过<strong>旋转</strong>编码器来选择不同的功能。</li>
+                <li><strong>短按</strong>编码器按钮，确认进入所选功能。</li>
+                <li>如果10秒内没有任何操作，菜单会自动返回到播放界面。</li>
+            </ul>
+            <h4>主菜单功能包括：</h4>
+            <ol>
+                <li><strong>选择电台：</strong> 播放网络电台。</li>
+                <li><strong>SD卡播放器：</strong> 播放TF卡中的MP3音乐。</li>
+                <li><strong>时钟显示：</strong> 查看当前网络时间。</li>
+                <li><strong>PONG游戏：</strong> 玩经典的弹球游戏。</li>
+                <li><strong>WiFi设置：</strong> 重新配置或管理WiFi网络。</li>
+                <li><strong>恢复出厂设置：</strong> 清除所有用户设置，恢复默认。</li>
+                <li><strong>内存分配：</strong> （<em>此项为技术信息，普通用户可忽略</em>）查看设备内存使用情况。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 主菜单界面</p>
+                <img src="placeholder_main_menu.png" alt="主菜单界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示主菜单的截图。</em></p>
+            </div>
+
+            <h3>5.3 网络电台播放</h3>
+            <ol>
+                <li><strong>进入：</strong> 在主菜单中选择“1.选择电台”。</li>
+                <li><strong>选择电台：</strong> 旋转编码器，浏览预设的电台列表。</li>
+                <li><strong>开始播放：</strong> 找到您想听的电台后，按下编码器按钮即可开始播放。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 电台选择界面</p>
+                <img src="placeholder_radio_select.png" alt="电台选择界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示电台选择列表的截图。</em></p>
+            </div>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 网络电台播放界面</p>
+                <img src="placeholder_radio_playing.png" alt="网络电台播放界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示网络电台播放信息的截图（例如电台名称、缓冲状态等）。</em></p>
+            </div>
+
+            <h4>电台管理（通过手机/电脑网页）：</h4>
+            <ul>
+                <li>设备连接WiFi后，您可以在手机或电脑浏览器中访问设备的IP地址（通常在启动时或主菜单的时钟界面中显示）。</li>
+                <li>在网页界面，您可以方便地添加、编辑或删除电台，最多可保存20个常用电台。</li>
+            </ul>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> Web电台管理界面</p>
+                <img src="placeholder_web_radio_manage.png" alt="Web电台管理界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为Web管理界面中“电台管理”部分的截图。</em></p>
+            </div>
+
+            <h3>5.4 TF卡播放器</h3>
+            <ol>
+                <li><strong>进入：</strong> 确保TF卡已插入，然后在主菜单中选择“2.SD卡播放器”。</li>
+                <li><strong>自动扫描：</strong> 首次进入时，设备会自动扫描TF卡中的音乐文件并建立播放列表。</li>
+                <li><strong>开始播放：</strong> 扫描完成后，将自动开始播放音乐。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> SD卡扫描界面</p>
+                <img src="placeholder_sd_scan.png" alt="SD卡扫描界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示SD卡扫描进度的截图。</em></p>
+            </div>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> SD卡音乐播放界面</p>
+                <img src="placeholder_sd_playing.png" alt="SD卡音乐播放界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示SD卡音乐播放信息（例如歌曲名、艺术家）的截图。</em></p>
+            </div>
+
+            <h4>播放控制菜单：</h4>
+            <p>在SD卡播放界面，再次短按编码器按钮，可进入播放控制菜单。</p>
+            <ol>
+                <li><strong>下一首：</strong> 切换到下一首歌曲。</li>
+                <li><strong>上一首：</strong> 切换到上一首歌曲。</li>
+                <li><strong>播放/暂停：</strong> 暂停或继续播放当前歌曲。</li>
+                <li><strong>播放模式：</strong> 切换“单曲循环”、“顺序播放”和“随机播放”。</li>
+                <li><strong>PONG游戏：</strong> 在听音乐时也能玩游戏。</li>
+                <li><strong>切换效果图：</strong> 更改播放时的动画效果（共有12种酷炫动画）。</li>
+                <li><strong>退出：</strong> 退出SD卡播放器，设备将自动重启以释放资源。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> SD卡播放控制菜单</p>
+                <img src="placeholder_sd_control_menu.png" alt="SD卡播放控制菜单" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示SD卡播放控制菜单的截图。</em></p>
+            </div>
+
+            <h3>5.5 时钟显示</h3>
+            <ol>
+                <li><strong>进入：</strong> 在主菜单中选择“3.时钟显示”。</li>
+                <li><strong>自动同步：</strong> 设备会自动连接网络时间服务器（NTP）同步当前时间并显示。</li>
+                <li><strong>返回：</strong> 短按编码器按钮可返回主菜单。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 时钟显示界面</p>
+                <img src="placeholder_clock.png" alt="时钟显示界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示当前网络时间的截图。</em></p>
+            </div>
+
+            <h3>5.6 PONG游戏</h3>
+            <ol>
+                <li><strong>进入：</strong> 在主菜单中选择“4.PONG游戏”。</li>
+                <li><strong>游戏玩法：</strong>
+                    <ul>
+                        <li>您控制左侧的挡板，通过旋转编码器上下移动。</li>
+                        <li>用挡板击打小球，使其通过对方区域得分。</li>
+                        <li>先得5分者获胜！</li>
+                    </ul>
+                </li>
+                <li><strong>返回：</strong> 游戏结束后或随时短按编码器按钮可返回主菜单。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> PONG游戏界面</p>
+                <img src="placeholder_pong_game.png" alt="PONG游戏界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示PONG游戏界面的截图。</em></p>
+            </div>
+
+            <h3>5.7 WiFi设置</h3>
+            <ol>
+                <li><strong>进入：</strong> 在主菜单中选择“5.WiFi设置”。</li>
+                <li><strong>重新配置：</strong> 设备将再次进入配网模式，您可以按照“首次使用”章节的步骤重新配置WiFi。</li>
+                <li><strong>多网络支持：</strong> 设备最多可保存5个WiFi网络，启动时会自动连接信号最好的一个。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> WiFi设置入口界面</p>
+                <img src="placeholder_wifi_setting_entry.png" alt="WiFi设置入口界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示“WiFi设置”选项的截图。</em></p>
+            </div>
+
+            <h3>5.8 恢复出厂设置</h3>
+            <ol>
+                <li><strong>进入：</strong> 在主菜单中选择“6.恢复出厂设置”。</li>
+                <li><strong>确认：</strong> 确认后，设备将清除所有已保存的电台和WiFi信息，恢复到初始状态。</li>
+                <li><strong>重启：</strong> 设备将自动重启。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> 恢复出厂设置确认界面</p>
+                <img src="placeholder_factory_reset.png" alt="恢复出厂设置确认界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示“恢复出厂设置”确认提示的截图。</em></p>
+            </div>
+
+            <h3>5.9 OTA固件升级</h3>
+            <p>为了让您的设备保持最新状态，我们提供了在线固件升级功能。</p>
+            <ol>
+                <li><strong>检查更新：</strong> 在主菜单 -> 播放器选择 -> 选择“OTA”选项，设备将自动检查是否有新版本固件。</li>
+                <li><strong>开始升级：</strong> 如果有新版本，根据屏幕提示选择“1.升级”即可开始。升级过程中请务必保持设备连接电源，切勿断电。</li>
+                <li><strong>自动重启：</strong> 升级完成后，设备将自动重启并加载新固件。</li>
+            </ol>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> OTA升级检查界面</p>
+                <img src="placeholder_ota_check.png" alt="OTA升级检查界面" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为设备OLED屏幕显示OTA升级检查进度的截图。</em></p>
+            </div>
+        </section>
+
+        <section id="web-interface">
+            <h2>六、Web管理界面（高级功能）</h2>
+            <p>您可以通过手机或电脑的浏览器访问设备的Web管理界面，进行更便捷的设置。</p>
+            <ol>
+                <li><strong>确保连接：</strong> 确保您的设备已成功连接到WiFi网络。</li>
+                <li><strong>获取IP地址：</strong> 在设备的OLED屏幕上（例如在时钟显示界面）或通过首次配网的浏览器页面，可以查看到设备的IP地址。</li>
+                <li><strong>访问：</strong> 在浏览器中输入设备的IP地址即可访问。</li>
+            </ol>
+            <p>Web界面提供：</p>
+            <ul>
+                <li><strong>电台管理：</strong> 添加、编辑、删除电台，比在设备上操作更方便。</li>
+                <li><strong>WiFi管理：</strong> 查看、添加、删除已保存的WiFi网络。</li>
+            </ul>
+            <div class="image-placeholder">
+                <p><strong>[图片占位符]</strong> Web管理界面首页</p>
+                <img src="placeholder_web_homepage.png" alt="Web管理界面首页" style="max-width:100%; height:auto;">
+                <p><em>请在此处替换为Web管理界面的首页截图，展示电台和WiFi管理入口。</em></p>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>七、常见问题解答</h2>
+            <dl>
+                <dt><strong>Q1：设备无法连接WiFi怎么办？</strong></dt>
+                <dd><strong>A：</strong>
+                    <ol>
+                        <li>检查您输入的WiFi名称（SSID）和密码是否正确，注意大小写。</li>
+                        <li>尝试将设备靠近路由器，或检查WiFi信号强度。</li>
+                        <li>尝试重启设备，然后重新进行WiFi配置。</li>
+                        <li>确保您的WiFi是2.4GHz频段，目前不支持5GHz WiFi。</li>
+                    </ol>
+                </dd>
+
+                <dt><strong>Q2：播放音乐没有声音？</strong></dt>
+                <dd><strong>A：</strong>
+                    <ol>
+                        <li>检查音量是否调到最低，尝试旋转编码器增大音量。</li>
+                        <li>检查扬声器是否正确连接，是否有松动。</li>
+                        <li>确保MAX98357A功放模块已正常供电。</li>
+                    </ol>
+                </dd>
+
+                <dt><strong>Q3：SD卡中的音乐无法播放？</strong></dt>
+                <dd><strong>A：</strong>
+                    <ol>
+                        <li>确保TF卡已格式化为FAT32文件系统。</li>
+                        <li>确保TF卡中存放的是MP3格式的音乐文件。</li>
+                        <li>检查TF卡是否插紧或损坏。</li>
+                        <li>尝试重新插入TF卡，然后再次进入SD卡播放器。</li>
+                    </ol>
+                </dd>
+
+                <dt><strong>Q4：设备播放时卡顿，或者频繁重启？</strong></dt>
+                <dd><strong>A：</strong>
+                    <ol>
+                        <li>检查网络连接是否稳定，如果播放网络电台，可能是网络速度慢导致。</li>
+                        <li>如果播放SD卡音乐，可能是TF卡读写速度不够（建议Class 10或更高）。</li>
+                        <li>如果TF卡中音乐文件过多（超过500首），可能会影响设备性能，尝试减少歌曲数量。</li>
+                        <li>尝试重启设备，释放内存。</li>
+                    </ol>
+                </dd>
+
+                <dt><strong>Q5：如何获取最新固件？</strong></dt>
+                <dd><strong>A：</strong> 您可以通过设备自带的OTA固件升级功能（参见5.9节）在线更新，无需连接电脑。</dd>
+            </dl>
+        </section>
+
+        <section id="safety">
+            <h2>八、安全注意事项</h2>
+            <p>为了您的安全和设备正常运行，请务必遵守以下注意事项：</p>
+            <ol>
+                <li><strong>电源：</strong> 请使用符合安全标准的5V USB电源适配器。切勿使用劣质电源或连接电压不符的电源。</li>
+                <li><strong>电池：</strong> 如果设备使用电池供电，请确保使用原装或符合标准的锂电池，并注意电池的正负极连接。避免电池过充、过放、短路或刺穿。</li>
+                <li><strong>环境：</strong> 避免在潮湿、高温、多尘或腐蚀性气体环境中使用设备。</li>
+                <li><strong>操作：</strong> 请勿私自拆卸、改装设备。避免强力撞击或摔落。</li>
+                <li><strong>网络：</strong> 谨慎连接未知或不安全的WiFi网络。</li>
+            </ol>
+        </section>
+
+        <section id="contact">
+            <h2>九、联系我们</h2>
+            <p>如果您在使用过程中遇到任何问题或有宝贵建议，请通过以下方式与我们联系：</p>
+            <ul>
+                <li>（此处可填写您的GitHub Issues链接、邮箱、论坛等联系方式）</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>文档版本：V1.0 | 最后更新：2026-03-23 | 适用固件版本：V1.1.01及以上版本</p>
+    </footer>
+</body>
+</html>
