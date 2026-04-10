@@ -83,6 +83,15 @@ Open config.h.
 
 Configure your Navidrome server address and API credentials.
 
+### 🔨 Building with PlatformIO
+This project uses **PlatformIO** for advanced memory and library management.
+
+1. Clone the repository.
+2. Open the folder in VS Code with the PlatformIO extension installed.
+3. The `platformio.ini` will automatically handle dependencies (Audio, U8g2, ArduinoJson, etc.).
+4. Click **Upload** to flash the ESP32-WROOM.
+
+
 ## 🔌 Hardware & PCB Design
 
 The project includes complete hardware design files, allowing you to build your own IMP-PLAYER.
