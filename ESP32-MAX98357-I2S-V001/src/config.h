@@ -93,8 +93,8 @@
 // 用户可通过 Web 界面 /ota/config 修改并保存到 NVS，无需重新编译固件。
 #define OTA_NVS_KEY_VER_URL  "ota_ver_url"                                        // NVS键：版本检查URL
 #define OTA_NVS_KEY_FW_URL   "ota_fw_url"                                         // NVS键：固件下载URL
-#define OTA_DEFAULT_VER_URL  "https://"  // 默认版本检查URL
-#define OTA_DEFAULT_FW_URL   "https://"  // 默认固件下载URL
+#define OTA_DEFAULT_VER_URL  "http://YOUR_SERVER_IP"  // 默认版本检查URL
+#define OTA_DEFAULT_FW_URL   "http://YOUR_SERVER_IP"  // 默认固件下载URL
 
 //========================== 全局变量声明 ==========================  // 全局变量声明区域
 
