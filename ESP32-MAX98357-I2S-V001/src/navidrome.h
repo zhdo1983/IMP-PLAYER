@@ -108,7 +108,7 @@ void saveNaviConfig(const String& server, const String& user, const String& pass
   if (fixedServer.startsWith("http://")) {
     String hostPart = fixedServer.substring(7);
     if (hostPart.indexOf(":443") >= 0 || hostPart.indexOf(":4433") >= 0) {
-      fixedServer = "https://" + hostPart;
+      fixedServer = "http://YOUR_SERVER_IP" + hostPart;
       #if DEBUG_NAVI_VERBOSE
       Serial.println("[Navi] saveNaviConfig: auto-upgraded to HTTPS: " + fixedServer);
       #endif
