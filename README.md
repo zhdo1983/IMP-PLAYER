@@ -30,7 +30,7 @@ Maintenance: Web-based WiFi configuration portal and OTA (Over-the-Air) firmware
 
 This project is specifically optimized for the Non-PSRAM ESP32-WROOM chip:
 
-Dynamic Memory Orchestration: Implements a "模式切换即清场" (Clear-on-Switch) strategy. Metadata and buffers are dynamically allocated and freed to ensure 40KB+ contiguous heap for HTTPS handshakes.
+Dynamic Memory Orchestration: Implements a "模式切换即清场" (Clear-on-Switch) strategy. Metadata and buffers are dynamically allocated and freed to ensure 80KB+ contiguous heap for HTTPS handshakes.
 
 Anti-Fragmentation Hack: Uses a "Silent Handshake" technique (connecting to 127.0.0.1) to force the network stack to flush buffers and defragment the heap before critical operations.
 
