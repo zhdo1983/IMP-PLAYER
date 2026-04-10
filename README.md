@@ -106,14 +106,7 @@ Navidrome Default: Locate line 41 in navidrome.h:
    #define ND_DEFAULT_SERVER "https://your-navidrome-url"
 ----------------------------------------------------------------------------------------------------------
 
-4. Operation Guide
-Rotate Encoder: Adjust volume (Home screen) or navigate menus.
 
-Single Click: Confirm selection or enter sub-menu.
-
-Double Click: Quick switch between player modes.
-
-Long Press: Access system settings or return to home.
 
 5. Web Interface
 The device hosts a local web server for advanced configuration:
