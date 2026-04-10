@@ -1,7 +1,5 @@
 ![mmexport1775849875180](https://github.com/user-attachments/assets/efdf3724-83d1-4d39-af24-0dfab7c0ee93)
-![mmexport1775838527708](https://github.com/user-attachments/assets/6b438693-66ef-4ff8-8dfa-9a03bb403db8)
 
-![mmexport1775849851039](https://github.com/user-attachments/assets/f884a9c2-d020-415a-a0fb-d436b60d9ebf)
 IMP-PLAYER: The ESP32-WROOM Network Audio Terminal
 1. Project Overview
 IMP-PLAYER is a high-performance audio terminal based on the ESP32-WROOM-32 (No-PSRAM version). It is designed to push the hardware's physical limits, integrating network streaming, local playback, and complex UI interactions within a highly constrained memory environment.
@@ -21,6 +19,8 @@ System Utilities: NTP network clock, battery monitoring, and a built-in PONG gam
 Maintenance: Web-based WiFi configuration portal and OTA (Over-the-Air) firmware updates.
 
 
+![mmexport1775849851039](https://github.com/user-attachments/assets/f884a9c2-d020-415a-a0fb-d436b60d9ebf)
+
 This project is specifically optimized for the Non-PSRAM ESP32-WROOM chip:
 
 Dynamic Memory Orchestration: Implements a "模式切换即清场" (Clear-on-Switch) strategy. Metadata and buffers are dynamically allocated and freed to ensure 40KB+ contiguous heap for HTTPS handshakes.
@@ -28,7 +28,7 @@ Dynamic Memory Orchestration: Implements a "模式切换即清场" (Clear-on-Swi
 Anti-Fragmentation Hack: Uses a "Silent Handshake" technique (connecting to 127.0.0.1) to force the network stack to flush buffers and defragment the heap before critical operations.
 
 Multitasking: Decoupled FreeRTOS tasks for OLED rendering, audio decoding, and system monitoring.
-
+![mmexport1775838527708](https://github.com/user-attachments/assets/6b438693-66ef-4ff8-8dfa-9a03bb403db8)
 2. Hardware
 Component   Specification
 MCU     	 ESP32-WROOM-32 (4MB Flash, No PSRAM)
