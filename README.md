@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/10771bf1-1dd7-492c-a46d-8fcb9b9c6fa9
+
 ![mmexport1775849875180](https://github.com/user-attachments/assets/efdf3724-83d1-4d39-af24-0dfab7c0ee93)
 
 IMP-PLAYER: The ESP32-WROOM Network Audio Terminal
