@@ -77,6 +77,24 @@ Open config.h.
 
 Configure your Navidrome server address and API credentials.
 
+## 🔌 Hardware & PCB Design
+
+The project includes complete hardware design files, allowing you to build your own IMP-PLAYER.
+
+### Files Location:
+- **Schematic:** [/Hardware/IMP_PLAYER_Schematic.pdf](./Hardware/IMP_PLAYER_Schematic.pdf) - Check here for pin definitions and circuit logic.
+- **EasyEDA Project:** [/Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2](./Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2) - You can import this directly into [LCEDA (EasyEDA)](https://pro.lceda.cn/) for modification.
+
+### Key Hardware Features:
+- **ESP32-WROOM-32** Core (Fully utilizing the internal SRAM).
+- **MAX98357A** I2S DAC for high-quality audio output.
+- **Battery Management:** Integrated charging circuit with ADC voltage monitoring.
+- **Form Factor:** Optimized to fit the custom 3D-printed case.
+
+### Manufacturing:
+You can export the **Gerber files** from the `.EPRO2` file using EasyEDA and send them to manufacturers like JLCPCB for production.
+
+
 3.1 Initial Configuration (Code Level)
 Before flashing, you must set your default server endpoints in the source code:
 ----------------------------------------------------------------------------------------------------------
