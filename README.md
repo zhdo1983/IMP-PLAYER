@@ -42,7 +42,7 @@ Audio      DAC/Amp	MAX98357A I2S Class-D Amplifier
 Display   	SSD1306 128x64 OLED (I2C)
 Storage	   TF/MicroSD Card (SPI Mode)
 Input	     EC11 Rotary Encoder
-
+Lithium battery (3.7V) 602535P 600mAh x1
 2.1 Pin Mapping
 ESP32     Pin	     Component	Description
 GPIO5	    SD_CS	SD    Card Chip Select
