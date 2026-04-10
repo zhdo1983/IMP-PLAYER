@@ -82,8 +82,8 @@ The project includes complete hardware design files, allowing you to build your 
 
 ### Files Location:
 ### Files Location:
-- **Schematic:** [/Hardware/IMP_PLAYER_Schematic.pdf](./Hardware/IMP_PLAYER_Schematic.pdf)  - Check here for pin definitions and circuit logic.
-- **EasyEDA Project:** [/Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2](./Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2)
+- **Schematic:** [/Hardware/PCB_PCB1_2026-04-11.pdf](./Hardware/PCB_PCB1_2026-04-11.pdf)  - Check here for pin definitions and circuit logic.
+- **EasyEDA Project:** [/Hardware/ProDoc_PCB1_2026-04-11.EPRO2](./Hardware/ProDoc_PCB1_2026-04-11.EPRO2)
 - You can import this directly into [LCEDA (EasyEDA)](https://pro.lceda.cn/) for modification.
 
 ### Key Hardware Features:
