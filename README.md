@@ -138,7 +138,7 @@ OTA: Upload new .bin firmware files wirelessly.
 Navidrome Setup
 Create a standard user account in your Navidrome instance.
 
-You do not need to hardcode the password. Open the IMP-PLAYER Web Portal (after connecting to the device's WiFi) to enter the Username and Password. The device will automatically generate the MD5 Token for secure API communication.
+You do not need to hardcode the password. Open the filebrowser Web Portal (after connecting to the device's WiFi) to enter the Username and Password. The device will automatically generate the MD5 Token for secure API communication.
 
 OTA File Server
 To use the OTA update feature, you need a simple HTTP file server (like Nginx, Apache, or a simple Python file server) hosting two files:
