@@ -81,8 +81,10 @@ Configure your Navidrome server address and API credentials.
 The project includes complete hardware design files, allowing you to build your own IMP-PLAYER.
 
 ### Files Location:
-- **Schematic:** [/Hardware/IMP_PLAYER_Schematic.pdf](./Hardware/IMP_PLAYER_Schematic.pdf) - Check here for pin definitions and circuit logic.
-- **EasyEDA Project:** [/Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2](./Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2) - You can import this directly into [LCEDA (EasyEDA)](https://pro.lceda.cn/) for modification.
+### Files Location:
+- **Schematic:** [/Hardware/IMP_PLAYER_Schematic.pdf](./Hardware/IMP_PLAYER_Schematic.pdf)  - Check here for pin definitions and circuit logic.
+- **EasyEDA Project:** [/Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2](./Hardware/IMP_PLAYER_Project_EasyEDA.EPRO2)
+- You can import this directly into [LCEDA (EasyEDA)](https://pro.lceda.cn/) for modification.
 
 ### Key Hardware Features:
 - **ESP32-WROOM-32** Core (Fully utilizing the internal SRAM).
